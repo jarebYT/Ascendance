@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Ascendance V2.sln"
+    "dotnet.defaultSolution": "Ascendance.sln"
 }
