@@ -20,12 +20,13 @@ Le jeu prend place dans l'Égypte ancienne. Après être mort sur le champ de ba
 * Unity (moteur de jeu)
 * C# (programmation)
 * GitHub (gestion de version)
+* Aseprite (sprites/textures)
 
 ## Fonctionnalités
 
 * Combats de boss dynamiques et variés
-* Mécaniques de combat basées sur l'esquive, le contre et le blocage
-* Progression à travers les étages d'une pyramide avec des thèmes égyptiens
+* Mécaniques de combat basées sur le saut, l'esquive et le contre
+* Progression à travers les étages d'une pyramide d'égypte ancienne
 * Narration intégrée avec progression thématique
 
 ## Installation
