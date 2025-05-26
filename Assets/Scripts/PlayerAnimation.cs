@@ -13,6 +13,15 @@ public class PlayerAnimation : MonoBehaviour
 
     void Update()
     {
+        // Ne pas changer l'anim si on dash
+        if (playerMovement.isDashing)
+        {
+            anim.SetBool("isDashing", true);
+            return;
+        }
+
+        anim.SetBool("isDashing", false);
+
         // Animation de course
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         anim.SetBool("run", horizontalInput != 0);

@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,18 +12,32 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D body;
     private bool grounded;
 
-    public bool IsGrounded => grounded; // Propriété publique pour vérifier si le personnage est au sol
+    public bool IsGrounded => grounded; // Au sol ?
+
+    private bool canDash = true; // Peut-on dash ?
+    public bool isDashing = false; // Est-on en train de dash ?
+    [SerializeField] private float dashPower = 20f; // Puissance du dash
+    [SerializeField] private float dashTime = 0.2f; // Durée du dash
+    private float dashCooldown = 1f; // Temps de recharge du dash
+
+
+
+    private PlayerAnimation animator;
 
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
+        animator = GetComponentInChildren<PlayerAnimation>();
     }
 
     private void Update()
     {
         // Mouvement horizontal
         float horizontalInput = Input.GetAxisRaw("Horizontal");
-        body.linearVelocity = new Vector2(horizontalInput * speed, body.linearVelocity.y); // Utilise `velocity` pour un mouvement instantané
+        if (!isDashing)
+        {
+            body.linearVelocity = new Vector2(horizontalInput * speed, body.linearVelocity.y);
+        }
 
         // Flip du personnage
         if (horizontalInput > 0)
@@ -36,6 +52,22 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
             Jump();
+        }
+
+        // Dash
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && !isDashing)
+        {
+            StartCoroutine(Dash());
+        }
+
+    }
+
+    private void FixedUpdate()
+    {
+        // Vérification continue si le personnage est au sol
+        if (isDashing)
+        {
+            return; // Ne pas vérifier le sol pendant le dash
         }
     }
 
@@ -65,5 +97,20 @@ public class PlayerMovement : MonoBehaviour
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(groundCheck.position, 0.1f);
         }
+    }
+
+    private IEnumerator Dash()
+    {
+
+        canDash = false; // Désactive le dash pendant l'exécution
+        isDashing = true; // Indique que le personnage est en train de dash
+        float originalGravity = body.gravityScale; // Sauvegarde la gravité originale
+        body.gravityScale = 0; // Désactive la gravité pendant le dash
+        body.linearVelocity = new Vector2(transform.localScale.x * dashPower, 0); // Applique le dash
+        yield return new WaitForSeconds(dashTime); // Attend la durée du dash
+        body.gravityScale = originalGravity; // Restaure la gravité originale
+        isDashing = false; // Le dash est terminé
+        yield return new WaitForSeconds(dashCooldown); // Temps de recharge du dash
+        canDash = true; // Le dash est à nouveau disponible
     }
 }
