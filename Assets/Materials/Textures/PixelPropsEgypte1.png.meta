@@ -146,10 +146,10 @@ TextureImporter:
       name: PixelPropsEgypte1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 51
-        width: 16
-        height: 36
+        x: 2
+        y: 110
+        width: 14
+        height: 34
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: PixelPropsEgypte1_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 51
-        width: 16
-        height: 36
+        x: 18
+        y: 110
+        width: 14
+        height: 34
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,10 +190,10 @@ TextureImporter:
       name: PixelPropsEgypte1_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 51
-        width: 16
-        height: 36
+        x: 34
+        y: 110
+        width: 14
+        height: 34
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,10 +212,10 @@ TextureImporter:
       name: PixelPropsEgypte1_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 57
-        width: 16
-        height: 30
+        x: 50
+        y: 116
+        width: 14
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,10 +234,10 @@ TextureImporter:
       name: PixelPropsEgypte1_4
       rect:
         serializedVersion: 2
-        x: 64
-        y: 51
-        width: 16
-        height: 18
+        x: 96
+        y: 118
+        width: 14
+        height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,10 +256,10 @@ TextureImporter:
       name: PixelPropsEgypte1_5
       rect:
         serializedVersion: 2
-        x: 80
-        y: 51
-        width: 17
-        height: 19
+        x: 112
+        y: 118
+        width: 15
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,10 +278,10 @@ TextureImporter:
       name: PixelPropsEgypte1_6
       rect:
         serializedVersion: 2
-        x: 10
-        y: 20
-        width: 28
-        height: 17
+        x: 12
+        y: 90
+        width: 26
+        height: 15
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,10 +300,10 @@ TextureImporter:
       name: PixelPropsEgypte1_7
       rect:
         serializedVersion: 2
-        x: 66
-        y: 19
-        width: 11
-        height: 21
+        x: 98
+        y: 86
+        width: 9
+        height: 19
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -322,10 +322,10 @@ TextureImporter:
       name: PixelPropsEgypte1_8
       rect:
         serializedVersion: 2
-        x: 82
-        y: 35
-        width: 13
-        height: 12
+        x: 114
+        y: 102
+        width: 11
+        height: 10
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -344,10 +344,10 @@ TextureImporter:
       name: PixelPropsEgypte1_9
       rect:
         serializedVersion: 2
-        x: 10
-        y: 3
-        width: 28
-        height: 18
+        x: 11
+        y: 73
+        width: 26
+        height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -366,10 +366,10 @@ TextureImporter:
       name: PixelPropsEgypte1_10
       rect:
         serializedVersion: 2
-        x: 80
-        y: 3
-        width: 16
-        height: 27
+        x: 112
+        y: 70
+        width: 14
+        height: 25
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -380,6 +380,248 @@ TextureImporter:
       bones: []
       spriteID: 17d4253068884a060800000000000000
       internalID: 6963841032984350065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelPropsEgypte1_11
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 38
+        width: 14
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6366f77cd6fd78945b438f22d93cc96e
+      internalID: 1678961927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelPropsEgypte1_12
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 38
+        width: 14
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bfd94a32b4048944a0e5edd06096b66
+      internalID: 1151264923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelPropsEgypte1_13
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 38
+        width: 14
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 727f40f403f1f9f458f77d15076afd23
+      internalID: -1870424526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelPropsEgypte1_14
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 44
+        width: 14
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b377358b0fd8cb5499dde25364dbc515
+      internalID: -1750247980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelPropsEgypte1_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 49
+        width: 14
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d4a013092b39bc44a5dde2fece1c4a4
+      internalID: 463619561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelPropsEgypte1_16
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 49
+        width: 15
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c3f60a55f7e49044b164f7b718b5348
+      internalID: 312451954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelPropsEgypte1_17
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 18
+        width: 26
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24f09aceb7d3850459266649fe8fb85a
+      internalID: 1193645751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelPropsEgypte1_18
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 17
+        width: 9
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc4d04773fb4b8648a191cdb9ea63676
+      internalID: -1228253402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelPropsEgypte1_19
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 33
+        width: 11
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0708f1cac1c77a488a3d2031fb44f21
+      internalID: 808894725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelPropsEgypte1_20
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 1
+        width: 26
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33851b753324bc9488a0440e2854d627
+      internalID: 500964654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelPropsEgypte1_21
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1
+        width: 14
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cc5b0fec0453ca41bf3d9e9b3df2f36
+      internalID: 1515595779
       vertices: []
       indices: 
       edges: []
@@ -401,7 +643,18 @@ TextureImporter:
       PixelPropsEgypte1_0: -8015402273328423669
       PixelPropsEgypte1_1: 658891136377869603
       PixelPropsEgypte1_10: 6963841032984350065
+      PixelPropsEgypte1_11: 1678961927
+      PixelPropsEgypte1_12: 1151264923
+      PixelPropsEgypte1_13: -1870424526
+      PixelPropsEgypte1_14: -1750247980
+      PixelPropsEgypte1_15: 463619561
+      PixelPropsEgypte1_16: 312451954
+      PixelPropsEgypte1_17: 1193645751
+      PixelPropsEgypte1_18: -1228253402
+      PixelPropsEgypte1_19: 808894725
       PixelPropsEgypte1_2: 8498511856745779628
+      PixelPropsEgypte1_20: 500964654
+      PixelPropsEgypte1_21: 1515595779
       PixelPropsEgypte1_3: 8419489906470783755
       PixelPropsEgypte1_4: 8014824095222623873
       PixelPropsEgypte1_5: -5549464590282139815
