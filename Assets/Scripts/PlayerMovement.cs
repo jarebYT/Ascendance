@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashTime = 0.2f; // Durée du dash
     private float dashCooldown = 1f; // Temps de recharge du dash
 
-
+    AudioManager audioManager;
 
     private PlayerAnimation animator;
 
@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<PlayerAnimation>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Update()
