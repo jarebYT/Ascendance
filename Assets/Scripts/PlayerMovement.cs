@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashTime = 0.2f; // Durée du dash
     private float dashCooldown = 1f; // Temps de recharge du dash
 
-
+    AudioManager audioManager;
 
     private PlayerAnimation animator;
 
@@ -28,36 +28,40 @@ public class PlayerMovement : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<PlayerAnimation>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Update()
     {
-        // Mouvement horizontal
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        if (!isDashing)
+        if (!pauseSettings.pause)
         {
-            body.linearVelocity = new Vector2(horizontalInput * speed, body.linearVelocity.y);
-        }
+            // Mouvement horizontal
+            float horizontalInput = Input.GetAxisRaw("Horizontal");
+            if (!isDashing)
+            {
+                body.linearVelocity = new Vector2(horizontalInput * speed, body.linearVelocity.y);
+            }
 
-        // Flip du personnage
-        if (horizontalInput > 0)
-            transform.localScale = new Vector3(1, 1, 1);
-        else if (horizontalInput < 0)
-            transform.localScale = new Vector3(-1, 1, 1);
+            // Flip du personnage
+            if (horizontalInput > 0)
+                transform.localScale = new Vector3(1, 1, 1);
+            else if (horizontalInput < 0)
+                transform.localScale = new Vector3(-1, 1, 1);
 
-        // Vérifier si le personnage est au sol
-        grounded = CheckIfGrounded();
+            // Vérifier si le personnage est au sol
+            grounded = CheckIfGrounded();
 
-        // Saut
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
-        {
-            Jump();
-        }
+            // Saut
+            if (Input.GetKeyDown(KeyCode.Space) && grounded)
+            {
+                Jump();
+            }
 
-        // Dash
-        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && !isDashing)
-        {
-            StartCoroutine(Dash());
+            // Dash
+            if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && !isDashing)
+            {
+                StartCoroutine(Dash());
+            }
         }
 
     }
