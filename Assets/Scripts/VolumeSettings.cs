@@ -20,14 +20,12 @@ public class VolumeSettings : MonoBehaviour
             setMusicVolume(); // Set the initial volume when the script starts
             setSFXVolume(); // Set the initial SFX volume
         }
-
-
     }
 
     public void setMusicVolume()
     {
         float volume = musicSlider.value; // Get the value from the slider
-        myMixer.SetFloat("music", Mathf.Log10(volume)*20); // Set the volume in the AudioMixer
+        myMixer.SetFloat("music", Mathf.Log10(volume) * 20); // Set the volume in the AudioMixer
         PlayerPrefs.SetFloat("musicVolume", volume); // Save the volume setting
     }
 
@@ -45,5 +43,17 @@ public class VolumeSettings : MonoBehaviour
 
         SFXSlider.value = PlayerPrefs.GetFloat("SFX");
         setSFXVolume(); // Apply the loaded SFX volume
+    }
+
+    public void muteToggle(bool mute)
+    {
+        if (mute)
+        {
+            AudioListener.volume = 0;
+        }
+        else
+        {
+            AudioListener.volume = 1;
+        }
     }
 }

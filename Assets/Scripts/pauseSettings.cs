@@ -26,13 +26,15 @@ public class pauseSettings : MonoBehaviour
     }
 
 
-    public void Resume(){
+    public void Resume()
+    {
         pauseMenuUi.SetActive(false);
         Time.timeScale = 1.0f;
         pause = false;
     }
 
-    void MakePause(){
+    void MakePause()
+    {
         pauseMenuUi.SetActive(true);
         Time.timeScale = 0f;
         pause = true;
@@ -42,5 +44,11 @@ public class pauseSettings : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void ChangeScreen()
+    {
+        Screen.fullScreen = !Screen.fullScreen;
+        print("screen changed");
     }
 }
