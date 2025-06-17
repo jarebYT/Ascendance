@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 87bbea63b81ff36489bbdbd9eac0812a
+guid: 27e713f1bad2d7943a1d8c1226f229f4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1912812143522368334
-    second: bg-hallway7_0
+      213: -332341717399262221
+    second: bg-hallway5_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bg-hallway7_0
+      name: bg-hallway5_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2b4bb4f6d735475e0800000000000000
-      internalID: -1912812143522368334
+      spriteID: 3fbaf5608f8436bf0800000000000000
+      internalID: -332341717399262221
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bg-hallway7_0: -1912812143522368334
+      bg-hallway5_0: -332341717399262221
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

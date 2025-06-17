@@ -1367,6 +1367,7 @@ GameObject:
   - component: {fileID: 645249455}
   - component: {fileID: 645249457}
   - component: {fileID: 645249456}
+  - component: {fileID: 645249458}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -1431,6 +1432,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645249454}
   m_CullTransparentMesh: 1
+--- !u!95 &645249458
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645249454}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f31175ddc789c344ba11f315518dee89, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &655141656
 GameObject:
   m_ObjectHideFlags: 0
