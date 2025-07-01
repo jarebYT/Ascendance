@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 7b34df2812ddab246ba5f60711edecbb
+guid: 3cf97a53be51e8d4f86cff2affa5f6f6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4215866605431598780
-    second: cross-leaving_0
+      213: -466022129440576222
+    second: button_fullscreen_0
+  - first:
+      213: 4562017450297373877
+    second: button_fullscreen_1
+  - first:
+      213: -7253741800821593808
+    second: button_fullscreen_2
+  - first:
+      213: 8917447154527027819
+    second: button_fullscreen_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cross-leaving_0
+      name: button_fullscreen_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 9
-        height: 9
+        y: 5
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 44151d2b8ab3e75c0800000000000000
-      internalID: -4215866605431598780
+      spriteID: 22d2935a75b5889f0800000000000000
+      internalID: -466022129440576222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: button_fullscreen_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b4bb1053ba8f4f30800000000000000
+      internalID: 4562017450297373877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: button_fullscreen_2
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 5
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03960ad9348855b90800000000000000
+      internalID: -7253741800821593808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: button_fullscreen_3
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 0
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b62c6ecb0f221cb70800000000000000
+      internalID: 8917447154527027819
       vertices: []
       indices: 
       edges: []
@@ -135,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cross-leaving_0: -4215866605431598780
+      button_fullscreen_0: -466022129440576222
+      button_fullscreen_1: 4562017450297373877
+      button_fullscreen_2: -7253741800821593808
+      button_fullscreen_3: 8917447154527027819
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
