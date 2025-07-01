@@ -2400,7 +2400,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.26, y: 0, z: -10}
+  m_LocalPosition: {x: -57.21, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3469,6 +3469,8 @@ GameObject:
   - component: {fileID: 1002797603}
   - component: {fileID: 1002797604}
   - component: {fileID: 1002797605}
+  - component: {fileID: 1002797606}
+  - component: {fileID: 1002797607}
   m_Layer: 6
   m_Name: Boss_Anubis
   m_TagString: Untagged
@@ -3540,7 +3542,7 @@ Transform:
   m_GameObject: {fileID: 1002797599}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43.48, y: -2.11, z: 0}
+  m_LocalPosition: {x: 42.42, y: -2.32, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3566,10 +3568,10 @@ BoxCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 63
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 63
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -3619,7 +3621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 902f29322c7f7b74fbee2c7ecda27667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 2.67
+  attackRange: 2.6
   player: {fileID: 1416036516}
   playerLayer:
     serializedVersion: 2
@@ -3631,6 +3633,50 @@ MonoBehaviour:
   attack1Duration: 0.5
   attack2Duration: 0.7
   attack3Duration: 0.9
+--- !u!114 &1002797606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002797599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b69a2bf94948cb4428022a85f9ba728c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1080178262}
+  alertRange: 6
+  chaseRange: 0
+  isWakingUp: 0
+  moveSpeed: 3
+--- !u!50 &1002797607
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002797599}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &1058211466
 GameObject:
   m_ObjectHideFlags: 0
@@ -4565,10 +4611,10 @@ BoxCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 63
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 63
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
