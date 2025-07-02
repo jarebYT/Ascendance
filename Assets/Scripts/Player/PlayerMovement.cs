@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashTime = 0.2f; // Durée du dash
     private float dashCooldown = 1f; // Temps de recharge du dash
 
+    [SerializeField] public bool isWaking = true; // Le joueur est en train de se réveiller
+
     AudioManager audioManager;
 
     private PlayerAnimation animator;
@@ -35,21 +37,46 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!pauseSettings.pause)
         {
-            // Mouvement horizontal
+            if (isWaking)
+            {
+                // Met à jour grounded sinon l'animation de saut se joue à tort
+                grounded = true;
+                isDashing = false; // Désactive le dash pendant qu'on se réveille
+
+                Debug.Log(grounded);
+
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    animator.TriggerStandUp();
+                    isWaking = false;
+                }
+
+                return;
+            }
+
+            // Mouvement horizontal normal
             float horizontalInput = Input.GetAxisRaw("Horizontal");
             if (!isDashing)
             {
                 body.linearVelocity = new Vector2(horizontalInput * speed, body.linearVelocity.y);
             }
 
-            // Flip du personnage
+            // Flip personnage
             if (horizontalInput > 0)
                 transform.localScale = new Vector3(1, 1, 1);
             else if (horizontalInput < 0)
                 transform.localScale = new Vector3(-1, 1, 1);
 
-            // Vérifier si le personnage est au sol
-            grounded = CheckIfGrounded();
+            // Check au sol
+            if (isWaking)
+            {
+                grounded = true; // Le personnage est au sol pendant qu'il se réveille
+            }
+            else
+            {
+                // Vérifie si le personnage est au sol
+                grounded = CheckIfGrounded();
+            }
 
             // Saut
             if (Input.GetKeyDown(KeyCode.Space) && grounded)
@@ -63,7 +90,6 @@ public class PlayerMovement : MonoBehaviour
                 StartCoroutine(Dash());
             }
         }
-
     }
 
     private void FixedUpdate()

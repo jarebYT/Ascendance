@@ -13,7 +13,8 @@ public class PlayerAnimation : MonoBehaviour
 
     void Update()
     {
-        // Ne pas changer l'anim si on dash
+        if (playerMovement.isWaking) return; // Ne touche à rien si on est en train de se réveiller
+
         if (playerMovement.isDashing)
         {
             anim.SetBool("isDashing", true);
@@ -22,11 +23,25 @@ public class PlayerAnimation : MonoBehaviour
 
         anim.SetBool("isDashing", false);
 
-        // Animation de course
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         anim.SetBool("run", horizontalInput != 0);
 
-        // Animation de saut (false si au sol)
         anim.SetBool("grounded", playerMovement.IsGrounded);
+    }
+
+
+
+
+    public void TriggerStandUp()
+    {
+        anim.SetTrigger("standUp");
+        anim.SetBool("canMove", true); // Maintenant on peut bouger
+
+    }
+
+    // Appelé depuis l’event de fin d’animation "WakeUp"
+    public void OnWakeUpFinished()
+    {
+        anim.Play("WakeUpIdle"); // Force le perso à rester à 4 pattes
     }
 }

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3c1a8a4d3a3f9ce468711a9b3c160d4d
+guid: 816c83df632edca458bd91ec28e56fe1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5826479529469629657
-    second: tile000_0
+      213: 7907882766548907659
+    second: animation_waking_up4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -53,7 +53,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -72,8 +72,8 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 64
-    resizeAlgorithm: 1
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tile000_0
+      name: animation_waking_up4_0
       rect:
         serializedVersion: 2
-        x: 16
+        x: 8
         y: 16
-        width: 32
-        height: 27
+        width: 44
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9d45f151340dbd050800000000000000
-      internalID: 5826479529469629657
+      spriteID: b86b4997a717ebd60800000000000000
+      internalID: 7907882766548907659
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e5938e093a6249946a37313fe308ce3f
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tile000_0: 5826479529469629657
+      animation_waking_up4_0: 7907882766548907659
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
