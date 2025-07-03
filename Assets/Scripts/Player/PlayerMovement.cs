@@ -20,7 +20,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashTime = 0.2f; // Durée du dash
     private float dashCooldown = 1f; // Temps de recharge du dash
 
+    // PARTIE REVEIL
     [SerializeField] public bool isWaking = true; // Le joueur est en train de se réveiller
+    public bool canMove = false;
+
+    //****************************
 
     AudioManager audioManager;
 
@@ -39,19 +43,19 @@ public class PlayerMovement : MonoBehaviour
         {
             if (isWaking)
             {
-                // Met à jour grounded sinon l'animation de saut se joue à tort
                 grounded = true;
-                isDashing = false; // Désactive le dash pendant qu'on se réveille
+                isDashing = false;
 
-                Debug.Log(grounded);
-
-                if (Input.GetKeyDown(KeyCode.Space))
+                // Si on est en WakeUpIdle, on autorise le saut avec Espace
+                if (animator.IsInWakeUpIdle() && Input.GetKeyDown(KeyCode.Space))
                 {
-                    animator.TriggerStandUp();
-                    isWaking = false;
+                    Jump();              // On saute
+                    isWaking = false;    // On sort du mode réveil
+                    canMove = true;      // Le joueur peut maintenant bouger librement
+                    animator.TriggerStandUp(); // On déclenche l'animation de lever
                 }
 
-                return;
+                return; // Ignore tout le reste de Update()
             }
 
             // Mouvement horizontal normal
@@ -67,19 +71,12 @@ public class PlayerMovement : MonoBehaviour
             else if (horizontalInput < 0)
                 transform.localScale = new Vector3(-1, 1, 1);
 
-            // Check au sol
-            if (isWaking)
-            {
-                grounded = true; // Le personnage est au sol pendant qu'il se réveille
-            }
-            else
-            {
-                // Vérifie si le personnage est au sol
-                grounded = CheckIfGrounded();
-            }
+            // Vérifie si le personnage est au sol
+            grounded = CheckIfGrounded();
+            
 
             // Saut
-            if (Input.GetKeyDown(KeyCode.Space) && grounded)
+            if (Input.GetKeyDown(KeyCode.Space) && grounded && canMove)
             {
                 Jump();
             }

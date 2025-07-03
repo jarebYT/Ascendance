@@ -29,8 +29,12 @@ public class PlayerAnimation : MonoBehaviour
         anim.SetBool("grounded", playerMovement.IsGrounded);
     }
 
-
-
+    // Appelé à la fin d’animation "WakeUp"
+    public void WakeUpFinished()
+    {
+        anim.Play("WakeUpIdle"); // Force le perso à rester à 4 pattes
+        playerMovement.canMove = true; // On peut bouger après le réveil
+    }
 
     public void TriggerStandUp()
     {
@@ -39,9 +43,10 @@ public class PlayerAnimation : MonoBehaviour
 
     }
 
-    // Appelé depuis l’event de fin d’animation "WakeUp"
-    public void OnWakeUpFinished()
+    public bool IsInWakeUpIdle()
     {
-        anim.Play("WakeUpIdle"); // Force le perso à rester à 4 pattes
+        return anim.GetCurrentAnimatorStateInfo(0).IsName("WakeUpIdle");
     }
+
+    
 }
