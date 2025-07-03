@@ -14,6 +14,8 @@ public class PlayerHealth : MonoBehaviour
     [Header("Invincibility")]
     [SerializeField] private float invincibilityTime = 1f;
     private bool isInvincible = false;
+
+    private PlayerAnimation animator;
     
     void Start()
     {
@@ -47,11 +49,12 @@ public class PlayerHealth : MonoBehaviour
         
         Debug.Log($"Joueur récupère {healAmount} points de santé. Santé actuelle: {currentHealth}");
     }
-    
+
     private void Die()
     {
         Debug.Log("Le joueur est mort !");
         OnPlayerDeath?.Invoke();
+        animator.TriggerDeath();
         
         // Ici vous pouvez ajouter la logique de mort du joueur
         // Par exemple : respawn, game over screen, etc.

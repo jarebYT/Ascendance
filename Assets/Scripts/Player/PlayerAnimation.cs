@@ -48,5 +48,10 @@ public class PlayerAnimation : MonoBehaviour
         return anim.GetCurrentAnimatorStateInfo(0).IsName("WakeUpIdle");
     }
 
+    public void TriggerDeath()
+    {
+        anim.SetTrigger("isDead");
+    }
+
     
 }
