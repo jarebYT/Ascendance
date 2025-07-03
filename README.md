@@ -42,4 +42,4 @@ Ascendance est un jeu de type Boss Rush en 2D, se déroulant dans l'Égypte anci
 
 ## Remerciements
 
-* Merci à Youssef pour son soutien sans failles ("C'est de la merde votre truc") ;)
+* Merci à Youssef pour son soutien sans failles ;)
