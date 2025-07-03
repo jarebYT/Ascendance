@@ -9,9 +9,11 @@ public class CameraFollow : MonoBehaviour
     public Collider2D wallLeft;
     public Collider2D wallRight;
 
-    private float leftLimit;
+    public float leftLimit;
     private float rightLimit;
-    private float camHalfWidth;
+    public float camHalfWidth;
+
+
 
     void Start()
     {
