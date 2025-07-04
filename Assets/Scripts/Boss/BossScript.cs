@@ -22,6 +22,14 @@ public class BossScript : MonoBehaviour
     private bool canAttack = true;
     private bool isAttacking = false;
 
+    public bool canMove = true; // Pour contrôler si le boss peut se déplacer ou non
+
+    private BossAnimation animator;
+
+    void Start()
+    {
+        animator = GetComponentInChildren<BossAnimation>();
+    }
 
     void Update()
     {
@@ -54,19 +62,18 @@ public class BossScript : MonoBehaviour
                 break;
         }
     }
-    
+
     IEnumerator ExecuteAttack1()
     {
         isAttacking = true;
         canAttack = false;
-        
+        canMove = false; // Le boss ne peut pas se déplacer pendant l'attaque
+
         Debug.Log("Boss exécute l'attaque 1 !");
-        
-        // Animation d'attaque 1
-        // GetComponent<Animator>().SetTrigger("Attack1");
-        
+
+
         yield return new WaitForSeconds(attack1Duration * 0.6f); // Délai avant impact
-        
+
         // Vérifier si le joueur est encore dans la portée
         float currentDistance = Vector2.Distance(transform.position, player.position);
         if (currentDistance <= attackRange)
@@ -74,26 +81,25 @@ public class BossScript : MonoBehaviour
             DealDamageToPlayer(attack1Damage);
             Debug.Log($"Attaque 1 inflige {attack1Damage} dégâts !");
         }
-        
+
         yield return new WaitForSeconds(attack1Duration * 0.4f); // Fin de l'animation
         yield return new WaitForSeconds(attackCooldown);
-        
+
         isAttacking = false;
         canAttack = true;
+        canMove = true; // Le boss peut se déplacer à nouveau
     }
-    
+
     IEnumerator ExecuteAttack2()
     {
         isAttacking = true;
         canAttack = false;
-        
+        canMove = false; // Le boss ne peut pas se déplacer pendant l'attaque
+
         Debug.Log("Boss exécute l'attaque 2 !");
-        
-        // Animation d'attaque 2
-        // GetComponent<Animator>().SetTrigger("Attack2");
-        
+
         yield return new WaitForSeconds(attack2Duration * 0.6f); // Délai avant impact
-        
+
         // Vérifier si le joueur est encore dans la portée
         float currentDistance = Vector2.Distance(transform.position, player.position);
         if (currentDistance <= attackRange)
@@ -101,26 +107,25 @@ public class BossScript : MonoBehaviour
             DealDamageToPlayer(attack2Damage);
             Debug.Log($"Attaque 2 inflige {attack2Damage} dégâts !");
         }
-        
+
         yield return new WaitForSeconds(attack2Duration * 0.4f); // Fin de l'animation
         yield return new WaitForSeconds(attackCooldown);
-        
+
         isAttacking = false;
         canAttack = true;
+        canMove = true; // Le boss peut se déplacer à nouveau
     }
-    
+
     IEnumerator ExecuteAttack3()
     {
         isAttacking = true;
         canAttack = false;
-        
+        canMove = false; // Le boss ne peut pas se déplacer pendant l'attaque
+
         Debug.Log("Boss exécute l'attaque 3 !");
-        
-        // Animation d'attaque 3
-        // GetComponent<Animator>().SetTrigger("Attack3");
-        
+
         yield return new WaitForSeconds(attack3Duration * 0.6f); // Délai avant impact
-        
+
         // Vérifier si le joueur est encore dans la portée
         float currentDistance = Vector2.Distance(transform.position, player.position);
         if (currentDistance <= attackRange)
@@ -128,12 +133,13 @@ public class BossScript : MonoBehaviour
             DealDamageToPlayer(attack3Damage);
             Debug.Log($"Attaque 3 inflige {attack3Damage} dégâts !");
         }
-        
+
         yield return new WaitForSeconds(attack3Duration * 0.4f); // Fin de l'animation
         yield return new WaitForSeconds(attackCooldown);
-        
+
         isAttacking = false;
         canAttack = true;
+        canMove = true; // Le boss peut se déplacer à nouveau
     }
     
     void DealDamageToPlayer(int damage)
@@ -142,16 +148,6 @@ public class BossScript : MonoBehaviour
         if (playerHealth != null)
         {
             playerHealth.TakeDamage(damage);
-        }
-    }
-    
-    void ApplyKnockback(Transform target, float force)
-    {
-        Rigidbody2D targetRb = target.GetComponent<Rigidbody2D>();
-        if (targetRb != null)
-        {
-            Vector2 knockbackDirection = (target.position - transform.position).normalized;
-            targetRb.AddForce(knockbackDirection * force, ForceMode2D.Impulse);
         }
     }
     

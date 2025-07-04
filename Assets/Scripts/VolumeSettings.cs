@@ -4,45 +4,45 @@ using UnityEngine.Audio;
 
 public class VolumeSettings : MonoBehaviour
 {
-    [SerializeField] private AudioMixer myMixer; // Reference to the AudioMixer
-    [SerializeField] private Slider musicSlider; // Slider for music volume
-    [SerializeField] private Slider SFXSlider; // Slider for music volume
+    [SerializeField] private AudioMixer myMixer;
+    [SerializeField] private Slider musicSlider; 
+    [SerializeField] private Slider SFXSlider;
 
 
     private void Start()
     {
         if (PlayerPrefs.HasKey("musicVolume"))
         {
-            LoadVolume(); // Load the saved volume if it exists
+            LoadVolume(); 
         }
         else
         {
-            setMusicVolume(); // Set the initial volume when the script starts
-            setSFXVolume(); // Set the initial SFX volume
+            setMusicVolume(); 
+            setSFXVolume(); 
         }
     }
 
     public void setMusicVolume()
     {
-        float volume = musicSlider.value; // Get the value from the slider
-        myMixer.SetFloat("music", Mathf.Log10(volume) * 20); // Set the volume in the AudioMixer
-        PlayerPrefs.SetFloat("musicVolume", volume); // Save the volume setting
+        float volume = musicSlider.value; 
+        myMixer.SetFloat("music", Mathf.Log10(volume) * 20); 
+        PlayerPrefs.SetFloat("musicVolume", volume); 
     }
 
     public void setSFXVolume()
     {
-        float volume = SFXSlider.value; // Get the value from the slider
-        myMixer.SetFloat("SFX", Mathf.Log10(volume) * 20); // Set the volume in the AudioMixer
-        PlayerPrefs.SetFloat("SFX", volume); // Save the volume setting
+        float volume = SFXSlider.value; 
+        myMixer.SetFloat("SFX", Mathf.Log10(volume) * 20); 
+        PlayerPrefs.SetFloat("SFX", volume); 
     }
 
     private void LoadVolume()
     {
         musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
-        setMusicVolume(); // Apply the loaded volume
+        setMusicVolume(); 
 
         SFXSlider.value = PlayerPrefs.GetFloat("SFX");
-        setSFXVolume(); // Apply the loaded SFX volume
+        setSFXVolume(); 
     }
 
     public void muteToggle(bool mute)

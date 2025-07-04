@@ -1,6 +1,5 @@
 using UnityEngine;
  
-// Just a simple health manager to show how you can controll the HealthBar UI
 public class HealthManager : MonoBehaviour
 {
     public int maxHealth = 100;
@@ -16,7 +15,6 @@ public class HealthManager : MonoBehaviour
  
     void Update()
     {
-        // Damage player when we press the G key
         if (Input.GetKeyDown(KeyCode.G))
         {
             TakeDamage(20);

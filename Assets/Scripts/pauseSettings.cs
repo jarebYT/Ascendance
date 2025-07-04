@@ -4,12 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class pauseSettings : MonoBehaviour
 {
-    //la variable pause
     public static bool pause = false;
 
     public GameObject pauseMenuUi;
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))

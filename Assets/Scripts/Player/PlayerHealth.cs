@@ -63,9 +63,6 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("Le joueur est mort !");
         OnPlayerDeath?.Invoke();
         animator.TriggerDeath();
-        
-        // Ici vous pouvez ajouter la logique de mort du joueur
-        // Par exemple : respawn, game over screen, etc.
     }
     
     private System.Collections.IEnumerator InvincibilityCoroutine()
@@ -94,7 +91,7 @@ public class PlayerHealth : MonoBehaviour
         isInvincible = false;
     }
     
-    // Getters pour l'UI ou d'autres scripts
+
     public float GetCurrentHealth() => currentHealth;
     public float GetMaxHealth() => maxHealth;
     public float GetHealthPercentage() => currentHealth / maxHealth;

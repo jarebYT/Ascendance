@@ -4,7 +4,7 @@ using UnityEngine;
 public class BossMobility : MonoBehaviour
 {
     public Transform player;
-
+    private BossScript bossScript;
     public float alertRange = 6f;   // Zone d'alerte, boss idle mais prêt
     public float chaseRange = 0f;    // Zone de chase activée après alerte
     public bool isWakingUp = false;
@@ -15,6 +15,8 @@ public class BossMobility : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool canChase = false;   // Est-ce que le boss peut chasser ?
+    
+    
 
 
     private BossAnimation animator;
@@ -38,6 +40,7 @@ public class BossMobility : MonoBehaviour
     void Start()
     {
         animator = GetComponentInChildren<BossAnimation>();
+        bossScript = GetComponent<BossScript>();
         rb = GetComponent<Rigidbody2D>();
         if (player == null)
         {
@@ -59,7 +62,7 @@ public class BossMobility : MonoBehaviour
             // Ici tu peux déclencher une animation "réveil" ou jouer un son, etc.
         }
 
-        if (canChase && distanceToPlayer <= chaseRange)
+        if (canChase && distanceToPlayer <= chaseRange && bossScript.canMove)
         {
             // Le boss suit le joueur
             Vector2 direction = (player.position - transform.position).normalized;
