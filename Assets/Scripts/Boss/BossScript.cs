@@ -22,25 +22,17 @@ public class BossScript : MonoBehaviour
     private bool canAttack = true;
     private bool isAttacking = false;
 
-    private BossAnimation animator;
-
-    void Start()
-    {
-        animator = GetComponentInChildren<BossAnimation>();
-    }
 
     void Update()
     {
         if (player != null && canAttack && !isAttacking)
         {
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-            animator.Walk();
 
             // Vérifier si le joueur est dans la portée d'attaque
             if (distanceToPlayer <= attackRange)
             {
                 ExecuteRandomAttack();
-                animator.StopWalk();
             }
         }
     }

@@ -23,6 +23,14 @@ public class PlayerHealth : MonoBehaviour
         OnHealthChanged?.Invoke(currentHealth / maxHealth);
     }
     
+    void Update()
+    {
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
     public void TakeDamage(float damage)
     {
         if (isInvincible) return;

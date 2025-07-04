@@ -5,6 +5,7 @@ public class BossAnimation : MonoBehaviour
 
     private Animator animator;
     private BossScript bossScript;
+    private BossMobility bossMobility;
 
 
 
@@ -12,6 +13,8 @@ public class BossAnimation : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        bossScript = GetComponentInParent<BossScript>();
+        bossMobility = GetComponentInParent<BossMobility>();
     }
 
     // Update is called once per frame

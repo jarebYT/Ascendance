@@ -46,13 +46,13 @@ public class PlayerMovement : MonoBehaviour
                 grounded = true;
                 isDashing = false;
 
-                // Si on est en WakeUpIdle, on autorise le saut avec Espace
+                // Si on est en WakeUpIdle, on autorise le saut uniquement
                 if (animator.IsInWakeUpIdle() && Input.GetKeyDown(KeyCode.Space))
                 {
-                    Jump();              // On saute
-                    isWaking = false;    // On sort du mode réveil
-                    canMove = true;      // Le joueur peut maintenant bouger librement
-                    animator.TriggerStandUp(); // On déclenche l'animation de lever
+                    Jump();
+                    isWaking = false;    
+                    canMove = true;      
+                    animator.TriggerStandUp(); // déclenche l'animation de levée
                 }
 
                 return; // Ignore tout le reste de Update()

@@ -16,6 +16,11 @@ public class BossMobility : MonoBehaviour
     private Rigidbody2D rb;
     private bool canChase = false;   // Est-ce que le boss peut chasser ?
 
+
+    private BossAnimation animator;
+
+
+
     IEnumerator SleepCoroutine()
     {
         Debug.Log("Le boss a vu le joueur, il attend 2s avant de bouger...");
@@ -32,6 +37,7 @@ public class BossMobility : MonoBehaviour
 
     void Start()
     {
+        animator = GetComponentInChildren<BossAnimation>();
         rb = GetComponent<Rigidbody2D>();
         if (player == null)
         {
@@ -65,6 +71,7 @@ public class BossMobility : MonoBehaviour
             Flip(player.position.x > transform.position.x);
 
             // Ici tu peux lancer une animation "run"
+            animator.Walk();
         }
         else if (!canChase && distanceToPlayer <= alertRange)
         {
@@ -72,12 +79,15 @@ public class BossMobility : MonoBehaviour
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
             Flip(player.position.x > transform.position.x);
             // Animation idle ou "alert"
+            animator.StopWalk();
         }
         else
         {
             // Joueur trop loin, boss idle sans regarder le joueur
             rb.linearVelocity = Vector2.zero;
+            
             // Animation idle classique
+            animator.StopWalk();
         }
     }
 
