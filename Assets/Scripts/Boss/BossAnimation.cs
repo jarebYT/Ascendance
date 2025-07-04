@@ -10,8 +10,6 @@ public class BossAnimation : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        bossScript = GetComponentInParent<BossScript>();
-        bossMobility = GetComponentInParent<BossMobility>();
     }
 
     public void Walk()

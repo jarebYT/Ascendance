@@ -18,11 +18,6 @@ public class BossMobility : MonoBehaviour
     
     
 
-
-    private BossAnimation animator;
-
-
-
     IEnumerator SleepCoroutine()
     {
         Debug.Log("Le boss a vu le joueur, il attend 2s avant de bouger...");
@@ -39,7 +34,6 @@ public class BossMobility : MonoBehaviour
 
     void Start()
     {
-        animator = GetComponentInChildren<BossAnimation>();
         bossScript = GetComponent<BossScript>();
         rb = GetComponent<Rigidbody2D>();
         if (player == null)
