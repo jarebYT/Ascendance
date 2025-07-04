@@ -44,6 +44,11 @@ public class pauseSettings : MonoBehaviour
         Application.Quit();
     }
 
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void ChangeScreen()
     {
         Screen.fullScreen = !Screen.fullScreen;
