@@ -9,6 +9,8 @@ public class BossMobility : MonoBehaviour
     public float chaseRange = 0f;    // Zone de chase activée après alerte
     public bool isWakingUp = false;
 
+    private BossAnimation animator;
+
 
     public float moveSpeed = 3f;
 
@@ -34,6 +36,7 @@ public class BossMobility : MonoBehaviour
 
     void Start()
     {
+        animator = GetComponentInChildren<BossAnimation>();
         bossScript = GetComponent<BossScript>();
         rb = GetComponent<Rigidbody2D>();
         if (player == null)
