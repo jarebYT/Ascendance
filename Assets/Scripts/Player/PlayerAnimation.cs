@@ -53,6 +53,7 @@ public class PlayerAnimation : MonoBehaviour
     public void TriggerDeath()
     {
         anim.SetTrigger("isDead");
+        anim.SetBool("boolIsDead", true);
     }
 
     
