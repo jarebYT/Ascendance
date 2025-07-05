@@ -22,6 +22,8 @@ public class BossScript : MonoBehaviour
     
     public bool canAttack = true;
     private bool isAttacking = false;
+    private Rigidbody2D rb;
+
 
     public bool canMove = true; // Pour contrôler si le boss peut se déplacer ou non
 
@@ -34,6 +36,7 @@ public class BossScript : MonoBehaviour
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<BossAnimation>();
     }
 
@@ -110,6 +113,7 @@ public class BossScript : MonoBehaviour
         Debug.Log("Boss exécute l'attaque 2 !");
         animator.Attack2(); // Joue l'animation de l'attaque 2
 
+
         yield return new WaitForSeconds(attack2Duration * 0.6f); // Délai avant impact
 
         // Vérifier si le joueur est encore dans la portée
@@ -130,18 +134,48 @@ public class BossScript : MonoBehaviour
 
     IEnumerator ExecuteAttack3()
     {
-        audioManager.PlaySFX(audioManager.boss_attack); // Joue le son de l'attaque
+        audioManager.PlaySFX(audioManager.boss_attack);
 
         isAttacking = true;
         canAttack = false;
-        canMove = false; // Le boss ne peut pas se déplacer pendant l'attaque
+        canMove = false;
 
         Debug.Log("Boss exécute l'attaque 3 !");
-        animator.Attack3(); // Joue l'animation de l'attaque 3
+        animator.Attack3();
 
-        yield return new WaitForSeconds(attack3Duration * 0.6f); // Délai avant impact
+        // Petite pause avant le dash
+        yield return new WaitForSeconds(attack3Duration * 0.2f);
 
-        // Vérifier si le joueur est encore dans la portée
+        Vector2 startPos = rb.position;
+        Vector2 targetPos = player.position;
+
+        // On garde la même position Y que le boss au départ
+        targetPos.y = startPos.y;
+
+        Vector2 direction = (targetPos - startPos).normalized;
+        float slideDistance = 10f;
+        float slideDuration = 0.5f;
+
+        Vector2 endPos = startPos + direction * slideDistance;
+
+        float elapsed = 0f;
+        while (elapsed < slideDuration)
+        {
+            // On interpole la position en gardant Y constant
+            Vector2 newPos = Vector2.Lerp(startPos, endPos, elapsed / slideDuration);
+            newPos.y = startPos.y; // verrouille la hauteur
+
+            rb.MovePosition(newPos);
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        rb.MovePosition(endPos);
+
+        // Pause avant impact
+        yield return new WaitForSeconds(attack3Duration * 0.4f);
+
         float currentDistance = Vector2.Distance(transform.position, player.position);
         if (currentDistance <= attackRange)
         {
@@ -149,14 +183,14 @@ public class BossScript : MonoBehaviour
             Debug.Log($"Attaque 3 inflige {attack3Damage} dégâts !");
         }
 
-        yield return new WaitForSeconds(attack3Duration * 0.4f); // Fin de l'animation
+        yield return new WaitForSeconds(attack3Duration * 0.4f);
         yield return new WaitForSeconds(attackCooldown);
 
         isAttacking = false;
         canAttack = true;
-        canMove = true; // Le boss peut se déplacer à nouveau
+        canMove = true;
     }
-    
+
     void DealDamageToPlayer(int damage)
     {
         HealthManager playerHealth = player.GetComponent<HealthManager>();

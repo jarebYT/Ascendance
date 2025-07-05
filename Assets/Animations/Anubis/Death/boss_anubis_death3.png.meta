@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      boss_anubis_death3_0: 5306166962661530001
+      boss_anubis_death3_1: 4440427319259900885
+      boss_anubis_death3_2: 7346955294894303026
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
