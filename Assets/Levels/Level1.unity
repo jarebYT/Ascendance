@@ -4227,7 +4227,7 @@ GameObject:
   - component: {fileID: 1002797607}
   m_Layer: 6
   m_Name: Boss_Anubis
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5615,7 +5615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2915c459b2ced9246bd1e342d922b3c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 20
   currentHealth: 0
   healthBar: {fileID: 691537595}
 --- !u!114 &1416036522
