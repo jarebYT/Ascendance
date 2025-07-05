@@ -16,15 +16,18 @@ public class PlayerMelee : MonoBehaviour
     public float cooldown = 1f;
  
     public Animator animator;
-    
+
+    PlayerMovement playerMovement;
+
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
  
     private void Update()
     {
-        if (cooldownTimer <= 0)
+        if (cooldownTimer <= 0 && !playerMovement.isWaking && !playerMovement.isDashing && playerMovement.grounded)
         {
             if (Input.GetKey(KeyCode.K))
             {
