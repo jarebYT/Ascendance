@@ -15,6 +15,8 @@ public class BossMovement : MonoBehaviour
 
     public float moveSpeed = 3f;
 
+    public GameObject healthBar;
+
 
     private Rigidbody2D rb;
     private bool canChase = false;   // Est-ce que le boss peut chasser ?
@@ -26,6 +28,9 @@ public class BossMovement : MonoBehaviour
         }
     IEnumerator SleepCoroutine()
     {
+        healthBar.SetActive(true);
+        audioManager.MusicStop();
+        audioManager.PlayMusicLoop(audioManager.music_boss);
         Debug.Log("Le boss a vu le joueur, il attend 2s avant de bouger...");
         yield return new WaitForSeconds(2f);
 

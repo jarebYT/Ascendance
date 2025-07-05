@@ -61,9 +61,10 @@ public class BossHealthManager : MonoBehaviour
     }
 
     IEnumerator EndFight()
-    {   
+    {
+        audioManager.MusicStop();
         animator.FirstDeath();
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
         EndText.SetActive(true);
         Debug.Log("Appuyez sur F pour retourner au menu principal ou K pour détruire le boss.");
         bool actionTaken = false;
