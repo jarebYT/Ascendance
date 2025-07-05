@@ -21,4 +21,19 @@ public class BossAnimation : MonoBehaviour
     {
         animator.SetBool("isWalking", false);
     }
+
+    public void Attack1()
+    {
+        animator.SetTrigger("attack1");
+    }
+
+    public void Attack2()
+    {
+        animator.SetTrigger("attack2");
+    }
+
+    public void Attack3()
+    {
+        animator.SetTrigger("attack3");
+    }
 }

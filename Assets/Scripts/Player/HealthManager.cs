@@ -11,12 +11,15 @@ public class HealthManager : MonoBehaviour
 
     public HealthBar healthBar;
 
+    private PlayerAnimation playerAnimation;
+
 
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         playerMovement = GetComponent<PlayerMovement>();
+        playerAnimation = GetComponentInChildren<PlayerAnimation>();
     }
 
     public void TakeDamage(int damage)
@@ -35,6 +38,7 @@ public class HealthManager : MonoBehaviour
     {
         playerMovement.canMove = false; // Désactiver le mouvement du joueur
                                         // Désactiver tous les scripts sauf HealthManager
+        playerAnimation.TriggerDeath(); // Déclencher l'animation de mort
         foreach (MonoBehaviour script in GetComponents<MonoBehaviour>())
         {
             if (script != this)

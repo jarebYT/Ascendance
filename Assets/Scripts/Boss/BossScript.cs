@@ -78,6 +78,7 @@ public class BossScript : MonoBehaviour
         canMove = false; // Le boss ne peut pas se déplacer pendant l'attaque
 
         Debug.Log("Boss exécute l'attaque 1 !");
+        animator.Attack1(); // Joue l'animation de l'attaque 1
 
 
         yield return new WaitForSeconds(attack1Duration * 0.6f); // Délai avant impact
@@ -107,6 +108,7 @@ public class BossScript : MonoBehaviour
         canMove = false; // Le boss ne peut pas se déplacer pendant l'attaque
 
         Debug.Log("Boss exécute l'attaque 2 !");
+        animator.Attack2(); // Joue l'animation de l'attaque 2
 
         yield return new WaitForSeconds(attack2Duration * 0.6f); // Délai avant impact
 
@@ -135,6 +137,7 @@ public class BossScript : MonoBehaviour
         canMove = false; // Le boss ne peut pas se déplacer pendant l'attaque
 
         Debug.Log("Boss exécute l'attaque 3 !");
+        animator.Attack3(); // Joue l'animation de l'attaque 3
 
         yield return new WaitForSeconds(attack3Duration * 0.6f); // Délai avant impact
 
