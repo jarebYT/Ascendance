@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck; // Un point de vérification au bas du personnage
 
     private Rigidbody2D body;
-    private bool grounded;
+    public bool grounded;
 
     public bool IsGrounded => grounded; // Au sol ?
 
