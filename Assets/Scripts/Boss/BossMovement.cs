@@ -66,7 +66,6 @@ public class BossMovement : MonoBehaviour
         if (canChase && distanceToPlayer <= chaseRange && bossScript.canMove)
         {
             // Le boss suit le joueur
-            // audioManager.PlaySFX(audioManager.boss_footsteps);
             Vector2 direction = (player.position - transform.position).normalized;
             Vector2 horizontalDirection = new Vector2(direction.x, 0);
             Vector2 newVelocity = horizontalDirection * moveSpeed;

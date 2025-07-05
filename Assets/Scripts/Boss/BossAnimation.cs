@@ -36,4 +36,14 @@ public class BossAnimation : MonoBehaviour
     {
         animator.SetTrigger("attack3");
     }
+
+    public void FirstDeath()
+    {
+        animator.SetTrigger("firstDeath");
+    }
+
+    public void Killed()
+    {
+        animator.SetTrigger("killed");
+    }
 }

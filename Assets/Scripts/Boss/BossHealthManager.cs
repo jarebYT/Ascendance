@@ -21,11 +21,14 @@ public class BossHealthManager : MonoBehaviour
 
     AudioManager audioManager;
 
+    private BossAnimation animator;
+
     private void Start()
     {
         bossScript = GetComponent<BossScript>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        animator = GetComponentInChildren<BossAnimation>();
     }
     
     private void Awake()
@@ -58,7 +61,8 @@ public class BossHealthManager : MonoBehaviour
     }
 
     IEnumerator EndFight()
-    {
+    {   
+        animator.FirstDeath();
         yield return new WaitForSeconds(5f);
         EndText.SetActive(true);
         Debug.Log("Appuyez sur F pour retourner au menu principal ou K pour détruire le boss.");
@@ -67,6 +71,7 @@ public class BossHealthManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.K))
             {
+                animator.Killed();
                 Debug.Log("Le boss a été détruit !");
                 ChoiceText.gameObject.SetActive(false);
                 destroyText.gameObject.SetActive(true);
