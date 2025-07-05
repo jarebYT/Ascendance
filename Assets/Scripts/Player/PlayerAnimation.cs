@@ -56,5 +56,10 @@ public class PlayerAnimation : MonoBehaviour
         anim.SetBool("boolIsDead", true);
     }
 
+    public void Attack()
+    {
+        anim.SetTrigger("attack");
+    }
+
     
 }

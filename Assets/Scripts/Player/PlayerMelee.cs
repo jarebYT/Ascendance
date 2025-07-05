@@ -15,7 +15,7 @@ public class PlayerMelee : MonoBehaviour
 
     public float cooldown = 1f;
  
-    public Animator animator;
+    public PlayerAnimation animator;
 
     PlayerMovement playerMovement;
 
@@ -23,6 +23,8 @@ public class PlayerMelee : MonoBehaviour
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         playerMovement = GetComponent<PlayerMovement>();
+        animator = GetComponentInChildren<PlayerAnimation>();
+
     }
  
     private void Update()
@@ -31,12 +33,13 @@ public class PlayerMelee : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.K))
             {
+                animator.Attack();
                 audioManager.PlaySFX(audioManager.hero_attack);
                 Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(attackOrigin.position, attackRadius, enemyMask);
                 foreach (var enemy in enemiesInRange)
                 {
                     enemy.GetComponent<BossHealthManager>().TakeDamage(attackDamage, transform.position);
-                    audioManager.PlaySFX(audioManager.boss_hurt); // Joue le son de l'attaque
+                    audioManager.PlaySFX(audioManager.boss_hurt);
                 }
 
                 cooldownTimer = cooldown;
