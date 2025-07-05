@@ -5,7 +5,7 @@ public class BossAnimation : MonoBehaviour
 
     private Animator animator;
     private BossScript bossScript;
-    private BossMobility bossMobility;
+    private BossMovement bossMovement;
 
     void Start()
     {

@@ -19,7 +19,7 @@ public class BossScript : MonoBehaviour
     [SerializeField] private float attack2Duration = 0.7f;
     [SerializeField] private float attack3Duration = 0.9f;
     
-    private bool canAttack = true;
+    public bool canAttack = true;
     private bool isAttacking = false;
 
     public bool canMove = true; // Pour contrôler si le boss peut se déplacer ou non
@@ -149,17 +149,6 @@ public class BossScript : MonoBehaviour
         {
             playerHealth.TakeDamage(damage);
         }
-    }
-    
-    // Méthodes publiques pour contrôler le boss
-    public void SetCanAttack(bool value)
-    {
-        canAttack = value;
-    }
-    
-    public bool IsAttacking()
-    {
-        return isAttacking;
     }
     
     // Méthode pour visualiser les portées dans l'éditeur
