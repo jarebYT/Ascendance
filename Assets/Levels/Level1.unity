@@ -2090,7 +2090,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &456929182
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4412,8 +4412,9 @@ MonoBehaviour:
   alertRange: 6
   chaseRange: 0
   isWakingUp: 0
-  audioManager: {fileID: 0}
+  audioManager: {fileID: 1144626713}
   moveSpeed: 3
+  healthBar: {fileID: 456929181}
 --- !u!50 &1002797607
 Rigidbody2D:
   serializedVersion: 5
@@ -5598,6 +5599,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   groundCheck: {fileID: 1410694750}
+  grounded: 0
   isDashing: 0
   dashPower: 20
   dashTime: 0.2
@@ -5615,7 +5617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2915c459b2ced9246bd1e342d922b3c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
+  maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 691537595}
 --- !u!114 &1416036522
@@ -6338,7 +6340,7 @@ RectTransform:
   m_Father: {fileID: 456929182}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -1, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
