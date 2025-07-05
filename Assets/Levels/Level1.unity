@@ -4347,7 +4347,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3, y: 4}
+  m_Size: {x: 2, y: 4}
   m_EdgeRadius: 0
 --- !u!114 &1002797604
 MonoBehaviour:
@@ -4381,7 +4381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 902f29322c7f7b74fbee2c7ecda27667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 2.6
+  attackRange: 3.32
   player: {fileID: 1416036516}
   playerLayer:
     serializedVersion: 2
@@ -5793,7 +5793,7 @@ Transform:
   m_GameObject: {fileID: 1535440517}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.142, y: -0.24, z: 0}
+  m_LocalPosition: {x: 0.842, y: -0.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
