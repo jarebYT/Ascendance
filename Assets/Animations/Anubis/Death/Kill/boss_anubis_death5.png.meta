@@ -1,10 +1,34 @@
 fileFormatVersion: 2
-guid: 2fa1f79022193cc4db3ab8bb696427a8
+guid: 0ce8abbf48ffad54da45167b0dfc0302
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7318125209708902088
-    second: boss_anubis_no_death2_0
+      213: -7362160137623960028
+    second: boss_anubis_death5_0
+  - first:
+      213: 737347597361806528
+    second: boss_anubis_death5_1
+  - first:
+      213: -6702916449343882530
+    second: boss_anubis_death5_2
+  - first:
+      213: 2252958140497915542
+    second: boss_anubis_death5_3
+  - first:
+      213: 7571526665182066603
+    second: boss_anubis_death5_4
+  - first:
+      213: -4966771791717240752
+    second: boss_anubis_death5_5
+  - first:
+      213: -8731475138207352527
+    second: boss_anubis_death5_6
+  - first:
+      213: -1758808550649486802
+    second: boss_anubis_death5_7
+  - first:
+      213: 3067811013780286931
+    second: boss_anubis_death5_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +75,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 15
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +99,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,27 +133,40 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boss_anubis_no_death2_0
+      name: boss_anubis_death5_6
       rect:
         serializedVersion: 2
-        x: 7
+        x: 3
         y: 0
-        width: 56
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 108
+        height: 57
+      alignment: 9
+      pivot: {x: 0.2401908, y: 0.5026829}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8c6b78aea143f8560800000000000000
-      internalID: 7318125209708902088
+      spriteID: 139fef58f9193d680800000000000000
+      internalID: -8731475138207352527
       vertices: []
       indices: 
       edges: []
@@ -138,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4b668a1ee0215f744859eb7439bc1605
     internalID: 0
     vertices: []
     indices: 
@@ -147,7 +184,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      boss_anubis_death5_0: -7362160137623960028
+      boss_anubis_death5_1: 737347597361806528
+      boss_anubis_death5_2: -6702916449343882530
+      boss_anubis_death5_3: 2252958140497915542
+      boss_anubis_death5_4: 7571526665182066603
+      boss_anubis_death5_5: -4966771791717240752
+      boss_anubis_death5_6: -8731475138207352527
+      boss_anubis_death5_7: -1758808550649486802
+      boss_anubis_death5_8: 3067811013780286931
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
