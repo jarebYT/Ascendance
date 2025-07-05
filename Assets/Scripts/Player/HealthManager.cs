@@ -22,6 +22,14 @@ public class HealthManager : MonoBehaviour
         playerAnimation = GetComponentInChildren<PlayerAnimation>();
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Heal();
+        }
+    }
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -32,6 +40,13 @@ public class HealthManager : MonoBehaviour
         {
             StartCoroutine(Die());
         }
+    }
+
+    private void Heal()
+    {
+    currentHealth += 100;
+    healthBar.SetCurrentHealth(currentHealth);
+    Debug.Log($"Joueur guérit. Santé actuelle: {currentHealth}");
     }
 
     IEnumerator Die()
