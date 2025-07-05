@@ -4365,7 +4365,7 @@ MonoBehaviour:
   spareText: {fileID: 802176495}
   destroyText: {fileID: 360715737}
   ChoiceText: {fileID: 1632090781}
-  maxHealth: 20
+  maxHealth: 500
   currentHealth: 0
   healthBar: {fileID: 456929185}
   isDefeated: 0
@@ -4393,6 +4393,7 @@ MonoBehaviour:
   attack1Duration: 0.5
   attack2Duration: 0.7
   attack3Duration: 0.9
+  audioManager: {fileID: 0}
   canAttack: 1
   canMove: 1
 --- !u!114 &1002797606
@@ -4411,6 +4412,7 @@ MonoBehaviour:
   alertRange: 6
   chaseRange: 0
   isWakingUp: 0
+  audioManager: {fileID: 0}
   moveSpeed: 3
 --- !u!50 &1002797607
 Rigidbody2D:
@@ -5633,6 +5635,7 @@ MonoBehaviour:
   enemyMask:
     serializedVersion: 2
     m_Bits: 64
+  audioManager: {fileID: 1144626713}
   attackDamage: 25
   cooldown: 1
   animator: {fileID: 0}

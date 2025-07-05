@@ -19,12 +19,18 @@ public class BossHealthManager : MonoBehaviour
     public HealthBar healthBar;
     public bool isDefeated = false;
 
+    AudioManager audioManager;
 
     private void Start()
     {
         bossScript = GetComponent<BossScript>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+    }
+    
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
 
@@ -38,12 +44,17 @@ public class BossHealthManager : MonoBehaviour
             if (currentHealth <= 0)
             {
                 isDefeated = true;
-                bossScript.canMove = false; // Stop the boss from moving
-                bossScript.canAttack = false; // Stop the boss from attacking
+                foreach (MonoBehaviour script in GetComponents<MonoBehaviour>())
+                {
+                    if (script != this)
+                    {
+                        script.enabled = false;
+                    }
+                }
                 StartCoroutine(EndFight());
             }
         }
-        
+
     }
 
     IEnumerator EndFight()
@@ -59,6 +70,7 @@ public class BossHealthManager : MonoBehaviour
                 Debug.Log("Le boss a été détruit !");
                 ChoiceText.gameObject.SetActive(false);
                 destroyText.gameObject.SetActive(true);
+                audioManager.PlaySFX(audioManager.chain);
                 yield return new WaitForSeconds(5f);
                 UnityEngine.SceneManagement.SceneManager.LoadScene("mainMenu");
                 actionTaken = true;
@@ -68,6 +80,7 @@ public class BossHealthManager : MonoBehaviour
                 Debug.Log("Retour au menu principal !");
                 ChoiceText.gameObject.SetActive(false);
                 spareText.gameObject.SetActive(true);
+                audioManager.PlaySFX(audioManager.chain);
                 yield return new WaitForSeconds(5f);
                 UnityEngine.SceneManagement.SceneManager.LoadScene("mainMenu");
                 actionTaken = true;

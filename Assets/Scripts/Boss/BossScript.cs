@@ -18,6 +18,7 @@ public class BossScript : MonoBehaviour
     [SerializeField] private float attack1Duration = 0.5f;
     [SerializeField] private float attack2Duration = 0.7f;
     [SerializeField] private float attack3Duration = 0.9f;
+    public  AudioManager audioManager;
     
     public bool canAttack = true;
     private bool isAttacking = false;
@@ -25,6 +26,11 @@ public class BossScript : MonoBehaviour
     public bool canMove = true; // Pour contrôler si le boss peut se déplacer ou non
 
     private BossAnimation animator;
+
+     private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     void Start()
     {
@@ -65,6 +71,8 @@ public class BossScript : MonoBehaviour
 
     IEnumerator ExecuteAttack1()
     {
+        audioManager.PlaySFX(audioManager.boss_attack); // Joue le son de l'attaque
+
         isAttacking = true;
         canAttack = false;
         canMove = false; // Le boss ne peut pas se déplacer pendant l'attaque
@@ -92,6 +100,8 @@ public class BossScript : MonoBehaviour
 
     IEnumerator ExecuteAttack2()
     {
+        audioManager.PlaySFX(audioManager.boss_attack); // Joue le son de l'attaque
+
         isAttacking = true;
         canAttack = false;
         canMove = false; // Le boss ne peut pas se déplacer pendant l'attaque
@@ -118,6 +128,8 @@ public class BossScript : MonoBehaviour
 
     IEnumerator ExecuteAttack3()
     {
+        audioManager.PlaySFX(audioManager.boss_attack); // Joue le son de l'attaque
+
         isAttacking = true;
         canAttack = false;
         canMove = false; // Le boss ne peut pas se déplacer pendant l'attaque
@@ -147,6 +159,7 @@ public class BossScript : MonoBehaviour
         HealthManager playerHealth = player.GetComponent<HealthManager>();
         if (playerHealth != null)
         {
+            audioManager.PlaySFX(audioManager.hero_hurt); // Joue le son de dégâts du joueur
             playerHealth.TakeDamage(damage);
         }
     }
