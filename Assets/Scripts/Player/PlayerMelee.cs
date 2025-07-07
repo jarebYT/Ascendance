@@ -8,7 +8,7 @@ public class PlayerMelee : MonoBehaviour
     public float attackRadius = 1f;
     public LayerMask enemyMask;
  
-    public  AudioManager audioManager;
+    private  AudioManager audioManager;
     private float cooldownTimer = 0f;
  
     public int attackDamage = 25;
@@ -17,14 +17,13 @@ public class PlayerMelee : MonoBehaviour
  
     public PlayerAnimation animator;
 
-    PlayerMovement playerMovement;
+    private PlayerMovement playerMovement;
 
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         playerMovement = GetComponent<PlayerMovement>();
         animator = GetComponentInChildren<PlayerAnimation>();
-
     }
  
     private void Update()

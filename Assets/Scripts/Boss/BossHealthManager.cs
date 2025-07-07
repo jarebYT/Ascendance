@@ -19,7 +19,7 @@ public class BossHealthManager : MonoBehaviour
     public HealthBar healthBar;
     public bool isDefeated = false;
 
-    AudioManager audioManager;
+    private AudioManager audioManager;
 
     private BossAnimation animator;
 
@@ -29,10 +29,6 @@ public class BossHealthManager : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         animator = GetComponentInChildren<BossAnimation>();
-    }
-    
-    private void Awake()
-    {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 

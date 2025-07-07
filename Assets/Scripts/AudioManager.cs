@@ -3,16 +3,13 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [Header("--------Audio Sources--------")]
-    [SerializeField] AudioSource musicSource;
-    [SerializeField] AudioSource SFXSource;
+    public AudioSource musicSource;
+    public AudioSource SFXSource;
 
     [Header("--------Audio Clip--------")]
     public AudioClip background;
     public AudioClip boss_hurt;
     public AudioClip boss_attack;
-    public AudioClip boss_voice;
-    public AudioClip boss_voice2;
-    public AudioClip boss_voice3;
     public AudioClip boss_footsteps;
     public AudioClip chain;
     public AudioClip hero_hurt;
