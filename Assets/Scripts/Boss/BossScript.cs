@@ -9,7 +9,7 @@ public class BossScript : MonoBehaviour
     [SerializeField] private LayerMask playerLayer;
     
     [Header("Attacks")]
-    [SerializeField] private float attackCooldown = 2f;
+    [SerializeField] private float attackCooldown = 1.5f;
     [SerializeField] private int attack1Damage = 20;    // Attaque 1
     [SerializeField] private int attack2Damage = 25;    // Attaque 2
     [SerializeField] private int attack3Damage = 30;    // Attaque 3
@@ -174,7 +174,7 @@ public class BossScript : MonoBehaviour
         rb.MovePosition(endPos);
 
         // Pause avant impact
-        yield return new WaitForSeconds(attack3Duration * 0.4f);
+        yield return new WaitForSeconds(attack3Duration * 0.3f);
 
         float currentDistance = Vector2.Distance(transform.position, player.position);
         if (currentDistance <= attackRange)
