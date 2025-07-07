@@ -4409,14 +4409,11 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
-  attackCooldown: 2
+  attackCooldown: 1.5
   attack1Damage: 20
   attack2Damage: 25
   attack3Damage: 30
-  attack1Duration: 0.5
-  attack2Duration: 0.7
-  attack3Duration: 0.9
-  audioManager: {fileID: 0}
+  attackDuration: 0.3
   canAttack: 1
   canMove: 1
 --- !u!114 &1002797606
@@ -4957,9 +4954,6 @@ MonoBehaviour:
   background: {fileID: 8300000, guid: 7423ae3e01b9dbc449fa17e8a4d51f5d, type: 3}
   boss_hurt: {fileID: 8300000, guid: 1cf9f0d5c97e2f84e9ca79d2a57eb283, type: 3}
   boss_attack: {fileID: 8300000, guid: 10134f690a936b34da7be5ee7baece73, type: 3}
-  boss_voice: {fileID: 8300000, guid: 3ad1d32dc226c7542a7957b58dc17a74, type: 3}
-  boss_voice2: {fileID: 0}
-  boss_voice3: {fileID: 0}
   boss_footsteps: {fileID: 8300000, guid: 7b34457381c54f1468ae0ca9c2024226, type: 3}
   chain: {fileID: 8300000, guid: 88eaed1135eb18a4fac6b27abb404471, type: 3}
   hero_hurt: {fileID: 8300000, guid: 6226586e30ee93c4181b49679bd37cdb, type: 3}
@@ -5660,7 +5654,6 @@ MonoBehaviour:
   enemyMask:
     serializedVersion: 2
     m_Bits: 64
-  audioManager: {fileID: 1144626713}
   attackDamage: 25
   cooldown: 1
   animator: {fileID: 0}

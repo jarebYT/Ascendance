@@ -4,9 +4,9 @@ using UnityEngine.Audio;
 
 public class VolumeSettings : MonoBehaviour
 {
-    [SerializeField] private AudioMixer myMixer;
-    [SerializeField] private Slider musicSlider; 
-    [SerializeField] private Slider SFXSlider;
+    public AudioMixer myMixer;
+    public Slider musicSlider; 
+    public Slider SFXSlider;
 
 
     private void Start()
