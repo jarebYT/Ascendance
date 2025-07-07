@@ -13,7 +13,7 @@ public class PlayerAnimation : MonoBehaviour
 
     void Update()
     {
-        if (playerMovement.isWaking) return; // Ne touche à rien si on est en train de se réveiller
+        if (playerMovement.isWaking) return;
 
         if (playerMovement.isDashing)
         {
@@ -41,10 +41,11 @@ public class PlayerAnimation : MonoBehaviour
     public void TriggerStandUp()
     {
         anim.SetTrigger("standUp");
-        anim.SetBool("canMove", true); // Maintenant on peut bouger
+        anim.SetBool("canMove", true);
 
     }
 
+    // Dans PlayerMovement pour bloquer le mouvement pendant le idle réveil
     public bool IsInWakeUpIdle()
     {
         return anim.GetCurrentAnimatorStateInfo(0).IsName("WakeUpIdle");

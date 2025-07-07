@@ -7,23 +7,29 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed = 5;
     [SerializeField] private float jumpForce = 10;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private Transform groundCheck; // Un point de vérification au bas du personnage
+    [SerializeField] private Transform groundCheck;
 
     private Rigidbody2D body;
+
+    // PARTIE VERIF DU SOL
     public bool grounded;
+    public bool IsGrounded => grounded;
+    //****************************
 
-    public bool IsGrounded => grounded; // Au sol ?
 
-    private bool canDash = true; // Peut-on dash ?
-    public bool isDashing = false; // Est-on en train de dash ?
-    [SerializeField] private float dashPower = 20f; // Puissance du dash
-    [SerializeField] private float dashTime = 0.2f; // Durée du dash
-    private float dashCooldown = 1f; // Temps de recharge du dash
+    // PARTIE DASH
+    private bool canDash = true;
+    public bool isDashing = false;
+    [SerializeField] private float dashPower = 20f;
+    [SerializeField] private float dashTime = 0.2f;
+    private float dashCooldown = 1f;
+    //****************************
+
+
 
     // PARTIE REVEIL
-    [SerializeField] public bool isWaking = true; // Le joueur est en train de se réveiller
+    [SerializeField] public bool isWaking = true;
     public bool canMove = false;
-
     //****************************
 
     AudioManager audioManager;
@@ -52,10 +58,10 @@ public class PlayerMovement : MonoBehaviour
                     Jump();
                     isWaking = false;    
                     canMove = true;      
-                    animator.TriggerStandUp(); // déclenche l'animation de levée
+                    animator.TriggerStandUp();
                 }
 
-                return; // Ignore tout le reste de Update()
+                return;
             }
 
             // Mouvement horizontal normal
@@ -71,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
             else if (horizontalInput < 0)
                 transform.localScale = new Vector3(-1, 1, 1);
 
-            // Vérifie si le personnage est au sol
+            // Vérifie si le personnage est au sol via raycast
             grounded = CheckIfGrounded();
             
 
@@ -91,53 +97,42 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Vérification continue si le personnage est au sol
+
         if (isDashing)
         {
-            return; // Ne pas vérifier le sol pendant le dash
+            return;
         }
     }
 
     private void Jump()
     {
-        body.linearVelocity = new Vector2(body.linearVelocity.x, jumpForce); // Le saut est appliqué uniquement sur l'axe Y
-        grounded = false; // Le personnage n'est plus au sol pendant qu'il saute
+        body.linearVelocity = new Vector2(body.linearVelocity.x, jumpForce);
+        grounded = false;
     }
 
     private bool CheckIfGrounded()
     {
-        // Utilisation d'un Raycast légèrement sous le personnage pour vérifier le sol
+        // Raycast légèrement sous le personnage pour vérifier le sol
         RaycastHit2D hit = Physics2D.Raycast(groundCheck.position, Vector2.down, 0.1f, groundLayer);
         
-        // Affichage visuel du Raycast pour déboguer dans la scène (facultatif)
+        
         Debug.DrawRay(groundCheck.position, Vector2.down * 0.2f, Color.red);
 
-        // Si le raycast touche un sol, le personnage est considéré comme étant au sol
         return hit.collider != null;
-    }
-
-    // Visualisation du point de vérification au sol
-    private void OnDrawGizmos()
-    {
-        if (groundCheck != null)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(groundCheck.position, 0.1f);
-        }
     }
 
     private IEnumerator Dash()
     {
 
-        canDash = false; // Désactive le dash pendant l'exécution
-        isDashing = true; // Indique que le personnage est en train de dash
-        float originalGravity = body.gravityScale; // Sauvegarde la gravité originale
-        body.gravityScale = 0; // Désactive la gravité pendant le dash
-        body.linearVelocity = new Vector2(transform.localScale.x * dashPower, 0); // Applique le dash
-        yield return new WaitForSeconds(dashTime); // Attend la durée du dash
-        body.gravityScale = originalGravity; // Restaure la gravité originale
-        isDashing = false; // Le dash est terminé
-        yield return new WaitForSeconds(dashCooldown); // Temps de recharge du dash
-        canDash = true; // Le dash est à nouveau disponible
+        canDash = false;
+        isDashing = true;
+        float originalGravity = body.gravityScale;
+        body.gravityScale = 0;
+        body.linearVelocity = new Vector2(transform.localScale.x * dashPower, 0);
+        yield return new WaitForSeconds(dashTime);
+        body.gravityScale = originalGravity;
+        isDashing = false;
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
     }
 }

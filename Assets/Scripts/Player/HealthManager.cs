@@ -51,9 +51,9 @@ public class HealthManager : MonoBehaviour
 
     IEnumerator Die()
     {
-        playerMovement.canMove = false; // Désactiver le mouvement du joueur
-                                        // Désactiver tous les scripts sauf HealthManager
-        playerAnimation.TriggerDeath(); // Déclencher l'animation de mort
+        playerMovement.canMove = false;
+                                        
+        playerAnimation.TriggerDeath();
         foreach (MonoBehaviour script in GetComponents<MonoBehaviour>())
         {
             if (script != this)
