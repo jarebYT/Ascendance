@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Assets/Img/logo_game.png" alt="Logo du jeu" width="200"/>
+  <img src="Assets/Img/logo_game.png" alt="Logo du jeu" width="400"/>
 </p>
 
 Ascendance est un jeu de type Boss Rush en 2D, se déroulant dans l'Égypte ancienne. Vous incarnez l'âme d'un soldat mort, condamné par les dieux à prouver sa valeur lors de l'épreuve du jugement du coeur, en gravissant les étages d'une pyramide gardée par des boss aux mécaniques uniques.
