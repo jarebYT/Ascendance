@@ -1,47 +1,49 @@
 <p align="center">
-  <img src="Assets/Img/logo_game.png" alt="Logo du jeu" width="400"/>
+  <img src="Assets/Img/logo_game.png" alt="Game Logo" width="400"/>
 </p>
 
-Ascendance est un jeu de type Boss Rush en 2D, se déroulant dans l'Égypte ancienne. Vous incarnez l'âme d'un soldat mort, condamné par les dieux à prouver sa valeur lors de l'épreuve du jugement du coeur, en gravissant les étages d'une pyramide gardée par des boss aux mécaniques uniques.
+**Ascendance** is a 2D **Boss Rush** game set in ancient Egypt.  
+You play as the soul of a fallen soldier, condemned by the gods to prove his worth during the **trial of the heart** — by climbing the pyramid’s floors, each guarded by unique bosses with their own mechanics.
 
-## Table des matières
+## Table of Contents
 
-* [Technologies utilisées](#technologies-utilisées)
-* [Fonctionnalités](#fonctionnalités)
+* [Technologies Used](#technologies-used)
+* [Features](#features)
 * [Installation](#installation)
-* [Contributeurs](#contributeurs)
-* [Remerciements](#remerciements)
+* [Contributors](#contributors)
+* [Acknowledgments](#acknowledgments)
 
-## Technologies utilisées
+## Technologies Used
 
-* Unity (moteur de jeu)
-* C# (programmation)
-* GitHub (gestion de version)
-* Aseprite (sprites/textures)
+* **Unity** (game engine)
+* **C#** (programming)
+* **GitHub** (version control)
+* **Aseprite** (sprites and textures)
 
-## Fonctionnalités
+## Features
 
-* Combats de boss dynamiques et variés
-* Mécaniques de combat basées sur le saut et l'esquive
-* Progression à travers les étages d'une pyramide d'égypte ancienne
-* Narration intégrée avec progression thématique
+* Dynamic and varied **boss fights**
+* Combat mechanics based on **jumping and dodging**
+* Progressive ascent through the **floors of an ancient Egyptian pyramid**
+* Integrated **narrative progression** tied to the game’s theme
 
 ## Installation
 
-1. Cloner le dépôt :
+1. Clone the repository:
 
    ```bash
    git clone https://github.com/jarebYT/Ascendance.git
    ```
-2. Ouvrir le projet dans Unity.
-3. Lancer le jeu depuis l'éditeur.
+   
+2. Open the project in Unity.
+3. Run the game directly from the editor.
 
-## Contributeurs
+## Contributors
 
 * Alexandre Vanneuville
 * Sonny Naidja
 * Raphaël Bedleem
 
-## Remerciements
+## Acknowledgments
 
-* Merci à Youssef pour son soutien sans failles ;)
+Special thanks to Youssef for his unwavering support 😉
